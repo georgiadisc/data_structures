@@ -76,7 +76,7 @@ int main() {
     printf("Enter observations number: ");
     scanf("%d", &observations);
   } while (!(observations >= 0 &&
-             observations <= observations_limit));  // >= ﬁ > ·Ô ÙÔ 0?
+             observations <= observations_limit));
   for (i = 0; i < observations; i++) {
     do {
       printf("Enter an observation in [0,9]: ");
@@ -216,9 +216,7 @@ void GetNode_B(ListPointer *P, ListPointer *FreePtr, NodeType_B Node[]) {
   if (!FullList_B(*FreePtr)) *FreePtr = Node[*FreePtr].Next;
 }
 
-void ReleaseNode_B(NodeType_B Node[], ListPointer P, ListPointer *FreePtr)
-
-{
+void ReleaseNode_B(NodeType_B Node[], ListPointer P, ListPointer *FreePtr) {
   Node[P].Next = *FreePtr;
   Node[P].Data.number = -1;
   Node[P].Data.frequency = -1;
